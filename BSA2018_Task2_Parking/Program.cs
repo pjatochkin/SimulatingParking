@@ -10,6 +10,17 @@ namespace BSA2018_Task2_Parking
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                try
+                {
+                    Menu.UserCommands();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
         }
     }
 }
