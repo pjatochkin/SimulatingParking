@@ -23,9 +23,7 @@ namespace BSA2018_Task2_Parking
         public int _idCar
         {
             get
-            {
-                Car c = new Car();
-                idCar = c._id;
+            {               
                 return idCar;
             }
         }
@@ -33,6 +31,13 @@ namespace BSA2018_Task2_Parking
         public decimal _debit
         {
             get; set;
+        }
+
+        public Transaction(int _idCar, decimal _sum)
+        {
+            date = DateTime.Now;
+            idCar = _idCar;
+            debit = _sum;
         }
     }
 }

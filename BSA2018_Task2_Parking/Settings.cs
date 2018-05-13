@@ -13,8 +13,8 @@ namespace BSA2018_Task2_Parking
 
         private int timeOut = 3;
         private int parkingSpace = 10;
-        private double fine = 1.1;
-        Dictionary<string, int> price = new Dictionary<string, int>();
+        private decimal fine = 1.1m;
+        Dictionary<string, decimal> price = new Dictionary<string, decimal>();
 
         public int _timeOut
         {
@@ -29,30 +29,52 @@ namespace BSA2018_Task2_Parking
                     parkingSpace = value;   
             }
         }
-        public double _fine
+        public decimal _fine
         {
             get { return fine; }
         }
 
-        public Dictionary<string, int> returnAllPrice()
+        public Dictionary<string, decimal> ReturnAllPrice()
         {
             return price;
         }
 
-        public string returnTypeCar(int c)
+        public int ReturnPriceByType(carsType ct)
+        {
+            switch (ct)
+            {
+                case carsType.bus:
+                    return 4;
+                    break;
+                case carsType.motorcycle:
+                    return 1;
+                    break;
+                case carsType.passenger:
+                    return 2;
+                    break;
+                case carsType.truck:
+                    return 4;
+                    break;
+                default:
+                    return 2;
+                    break;
+            }
+        }
+
+        public string ReturnTypeCar(int c)
         {
             switch (c)
             {
-                case 0:
+                case 1:
                     return carsType.passenger.ToString();
                     break;
-                case 1:
+                case 2:
                     return carsType.truck.ToString();
                     break;
-                case 2:
+                case 3:
                     return carsType.bus.ToString();
                     break;
-                case 3:
+                case 4:
                     return carsType.motorcycle.ToString();
                     break;
                 default:
